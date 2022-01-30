@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --button-color: #0d6efd;
+}
+#notes-input {
+  width: 800px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+  height: 125px;
+  padding: 10px;
+  font-size: large;
+  border: 1px solid rgb(87, 87, 87);
+  border-radius: 5px;
+}
+#add-btn {
+  margin-top: 5px;
+}
+button {
+  width: 90px;
+  height: 30px;
+  background-color: var(--button-color);
+  color: white;
+  border: 1.5px solid var(--button-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+#notes {
+  height: 100%;
+  width: 810px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  padding: 10px;
+  overflow-x: hidden;
+}
+.note {
+  border: 1px solid black;
+  margin: 5px auto;
+  width: 100%;
+  height: 110px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.note-heading-and-note {
+  padding: 10px;
+  height: 110px;
+  width: 85%;
+}
+.heading {
+  height: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main-note {
+  padding: 5px 0;
+  margin-top: 5px;
+  height: 55px;
+  overflow-x: hidden;
+}
+.delBtn-div {
+  height: 110px;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
