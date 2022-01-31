@@ -88,3 +88,52 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 850px) {
+  #notes-input {
+    width: 95%;
+  }
+  #notes {
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .note-heading-and-note {
+    width: 70%;
+  }
+  .delBtn-div {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 340px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  .note {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .note-heading-and-note {
+    width: 100%;
+    height: 50%;
+  }
+  .delBtn-div {
+    padding: 10px;
+    width: 100%;
+    height: 30%;
+  }
+}
