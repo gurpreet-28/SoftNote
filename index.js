@@ -2,6 +2,8 @@ let notes = [];
 const noteArea = document.getElementById("note-area");
 const addBtn = document.getElementById("add-btn");
 let notesList = document.getElementById("notes");
+const search = document.getElementById("search");
+const searchIcon = document.getElementById("search-icon");
 let notesFromLocalStorage = JSON.parse(localStorage.getItem("notes"));
 
 if (notesFromLocalStorage) {
@@ -45,3 +47,24 @@ function deleteNote(index) {
   localStorage.setItem("notes", JSON.stringify(notes));
   showNotes();
 }
+
+searchIcon.addEventListener("click", () => {
+  if (search.style.display == "none") {
+    search.style.display = "block";
+  } else {
+    search.style.display = "none";
+  }
+});
+
+search.addEventListener("input", () => {
+  let searchValue = search.value;
+  let notes = document.querySelectorAll(".note");
+  notes.forEach(function (element) {
+    let noteTxt = element.getElementsByTagName("p")[0].innerText;
+    if (noteTxt.includes(searchValue)) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  });
+});

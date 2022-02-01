@@ -15,6 +15,32 @@ body {
 }
 :root {
   --button-color: #0d6efd;
+  --border-color: rgb(148, 148, 148);
+}
+#search-div {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#search-div input {
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  width: 180px;
+  height: 33px;
+  display: none;
+}
+#search-div i {
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  margin-left: 5px;
+  padding: 8px;
+}
+#search-div i:hover {
+  background-color: var(--border-color);
 }
 #notes-input {
   width: 800px;
@@ -49,44 +75,33 @@ button {
 }
 #notes {
   height: 100%;
-  width: 810px;
-  /* border: 1px solid black; */
+  width: 75vw;
+  max-width: 1000px;
   border-radius: 10px;
   padding: 10px;
-  overflow-x: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 .note {
   border: 1px solid black;
-  margin: 5px auto;
-  width: 100%;
-  height: 110px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.note-heading-and-note {
+  margin: 6px auto;
   padding: 10px;
-  height: 110px;
-  width: 85%;
+  width: 300px;
+  height: 100%;
+  border-radius: 5px;
 }
 .heading {
-  height: 30px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .main-note {
-  padding: 5px 0;
   margin-top: 5px;
-  height: 55px;
-  overflow-x: hidden;
+  margin-bottom: 5px;
 }
 .delBtn-div {
-  height: 110px;
-  width: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 850px) {
@@ -96,44 +111,20 @@ button {
   #notes {
     width: 94%;
   }
-}
-
-@media screen and (max-width: 670px) {
-  h1 {
-    font-size: 25px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  .note-heading-and-note {
-    width: 70%;
-  }
-  .delBtn-div {
-    width: 30%;
+  .note {
+    width: 230px;
   }
 }
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 600px) {
+  .note {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 300px) {
   h1 {
     font-size: 20px;
   }
   h2 {
     font-size: 18px;
-  }
-  .note {
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .note-heading-and-note {
-    width: 100%;
-    height: 50%;
-  }
-  .delBtn-div {
-    padding: 10px;
-    width: 100%;
-    height: 30%;
   }
 }
