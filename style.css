@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 75px;
 }
 * {
   box-sizing: border-box;
@@ -17,20 +18,55 @@ body {
   --button-color: #0d6efd;
   --border-color: rgb(148, 148, 148);
 }
-#search-div {
+header {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#title {
+  height: 75px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* nav {
+  border: 1px solid red;
+} */
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+nav li {
+  margin-left: 15px;
+}
+nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+nav a:hover {
+  color: var(--border-color);
+}
+#search-div {
+  margin-right: 5px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 #search-div input {
   border: 1px solid var(--border-color);
+  border-radius: 2px;
   padding: 5px;
   width: 180px;
-  height: 33px;
-  display: none;
+  height: 35px;
 }
 #search-div i {
   cursor: pointer;
@@ -44,7 +80,7 @@ body {
 }
 #notes-input {
   width: 800px;
-  height: 200px;
+  height: 100%;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
@@ -52,6 +88,52 @@ body {
   align-items: flex-start;
   justify-content: space-evenly;
   padding: 20px;
+}
+#ham-menu {
+  display: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#navigation {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  margin-top: -16px;
+  display: none;
+}
+#navigation ul {
+  list-style: none;
+}
+#navigation a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+#navigation a:hover {
+  color: var(--border-color);
+}
+#navigation hr {
+  width: 90vw;
+  margin-left: 0px;
+}
+#navigation input {
+  width: 200px;
+  height: 25px;
+  margin-left: 38px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 5px;
+}
+#note-title {
+  width: 40%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(87, 87, 87);
+  padding: 10px;
+  font-size: 16px;
+  font-family: monospace;
 }
 textarea {
   width: 100%;
@@ -88,7 +170,7 @@ button {
   border: 1px solid black;
   margin: 6px auto;
   padding: 10px;
-  width: 300px;
+  width: 301px;
   height: 100%;
   border-radius: 5px;
 }
@@ -100,7 +182,7 @@ button {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.delBtn-div {
+.delandedit {
   margin-top: 15px;
 }
 
@@ -112,12 +194,28 @@ button {
     width: 94%;
   }
   .note {
-    width: 230px;
+    width: 90%;
+  }
+  #note-title {
+    width: 60%;
+  }
+  nav,
+  #search-div {
+    display: none;
+  }
+  #ham-menu {
+    display: block;
+  }
+  hr {
+    width: 80vw;
   }
 }
 @media screen and (max-width: 600px) {
   .note {
     width: 95%;
+  }
+  #note-title {
+    width: 60%;
   }
 }
 @media screen and (max-width: 300px) {
@@ -126,5 +224,17 @@ button {
   }
   h2 {
     font-size: 18px;
+  }
+  #note-title {
+    width: 60%;
+  }
+  .note button {
+    width: 65px;
+    font-size: 10px;
+  }
+  .delandedit {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }

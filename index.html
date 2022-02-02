@@ -14,14 +14,43 @@
     <title>SoftNote || Save Your Important Notes</title>
   </head>
   <body>
-    <div id="search-div">
-      <input type="text" id="search" placeholder="enter keyword..." />
-      <i class="fas fa-search fa-x" id="search-icon"></i>
+    <header>
+      <div id="title">
+        <h1>SoftNote</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#">Favourites</a></li>
+        </ul>
+      </nav>
+      <div id="search-div">
+        <input type="text" id="search" placeholder="enter keyword..." />
+        <i class="fas fa-search fa-x" id="search-icon"></i>
+      </div>
+      <div id="ham-menu">
+        <i class="fas fa-bars fa-2x"></i>
+      </div>
+    </header>
+    <div id="mobil-menu">
+      <div id="navigation">
+        <ul>
+          <li><a href="">Home</a></li>
+          <hr />
+          <li><a href="#notes">Notes</a></li>
+          <hr />
+          <li><a href="#">Favourites</a></li>
+          <hr />
+        </ul>
+        <input type="text" id="search" placeholder="Enter keyword..." />
+      </div>
     </div>
     <div>
       <h1>Welcome to SoftNote</h1>
     </div>
     <div id="notes-input">
+      <input type="text" placeholder="Add title..." id="note-title" />
       <textarea
         name="note"
         id="note-area"

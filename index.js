@@ -4,6 +4,7 @@ const addBtn = document.getElementById("add-btn");
 let notesList = document.getElementById("notes");
 const search = document.getElementById("search");
 const searchIcon = document.getElementById("search-icon");
+// let noteTitle = document.getElementById("note-title");
 let notesFromLocalStorage = JSON.parse(localStorage.getItem("notes"));
 
 if (notesFromLocalStorage) {
@@ -24,8 +25,10 @@ function showNotes() {
           <h2 class="heading">Note ${i + 1}</h2>
           <p class="main-note">${notes[i]}</p>
         </div>
-        <div class="delBtn-div">
-          <button class="delete-btn" id="${i}" onclick="deleteNote(this.id)">Delete Note</button>
+        <div class="delandedit">
+          <button class="delete-btn" id="del ${i}" onclick="deleteNote(this.id)">Delete Note</button>
+          <button class="edit-btn" id="edit ${i}">Edit Note</button>
+          <button class="fav-btn" id="fav ${i}">Favourite</button>
         </div>
       </div>`;
   }
@@ -48,23 +51,27 @@ function deleteNote(index) {
   showNotes();
 }
 
-searchIcon.addEventListener("click", () => {
-  if (search.style.display == "none") {
-    search.style.display = "block";
-  } else {
-    search.style.display = "none";
-  }
-});
-
 search.addEventListener("input", () => {
-  let searchValue = search.value;
+  let searchValue = search.value.toLowerCase();
   let notes = document.querySelectorAll(".note");
   notes.forEach(function (element) {
-    let noteTxt = element.getElementsByTagName("p")[0].innerText;
+    let noteTxt = element.getElementsByTagName("p")[0].innerText.toLowerCase();
     if (noteTxt.includes(searchValue)) {
       element.style.display = "block";
     } else {
       element.style.display = "none";
     }
   });
+});
+
+//for mobile navigation
+const bars = document.querySelector(".fa-bars");
+const navMenu = document.getElementById("navigation");
+
+bars.addEventListener("click", () => {
+  if (navMenu.style.display == "none") {
+    navMenu.style.display = "block";
+  } else {
+    navMenu.style.display = "none";
+  }
 });
